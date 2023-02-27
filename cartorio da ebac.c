@@ -4,7 +4,7 @@
 
 int main(){
 	
-	//Define a variï¿½vel
+	//Define a variável
 	int opcao = 0;
 	int laco = 1;
 	
@@ -15,7 +15,7 @@ int main(){
     
     	//criando o menu do programa
     	printf("### CartÃ³rio da EBAC ### \n\n");
-    	printf("Escolha a opï¿½ï¿½o desejada do menu: \n \n");
+    	printf("Escolha a opção desejada do menu: \n \n");
     	printf("\t1 - Registrar nomes\n");
     	printf("\t2 - Consultar nomes\n");
     	printf("\t3 - Deletar nomes\n\n");
