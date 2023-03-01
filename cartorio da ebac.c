@@ -1,6 +1,15 @@
-#include <stdio.h> //biblioteca de comunicaÃ§Ã£o com o usuÃ¡rio
-#include <stdlib.h> //biblioteca de alocaÃ§Ã£o de espaÃ§o em memÃ³ria
-#include <locale.h> //biblioteca de alocaÃµes de texto por regiÃ£o
+#include <stdio.h> //biblioteca de comunicação com o usuário
+#include <stdlib.h> //biblioteca de alocação de espaço em memória
+#include <locale.h> //biblioteca de alocações de texto por região
+
+int registro(){
+    printf("Você escolheu a opção de registrar nome!\n\n");
+    system("pause");
+}
+
+int consulta(){
+	printf("Você escolheu a opção ")
+}
 
 int main(){
 	
@@ -10,62 +19,66 @@ int main(){
 	
 	for(laco = 1; laco = 1;){
 			system("cls");//limpa a tela
-		//Define a localidade do programa (para padrï¿½es de teclado ex: aceitar acentos
+		//Define a localidade do programa (para padrões de teclado ex: aceitar acentos
     	setlocale(LC_ALL, "Portuguese");
     
     	//criando o menu do programa
-    	printf("### CartÃ³rio da EBAC ### \n\n");
+    	printf("### Cartório da EBAC ### \n\n");
     	printf("Escolha a opção desejada do menu: \n \n");
     	printf("\t1 - Registrar nomes\n");
     	printf("\t2 - Consultar nomes\n");
     	printf("\t3 - Deletar nomes\n\n");
-    	printf("Opï¿½ï¿½o: "); //apenas visual no momento em que o usuï¿½rio digitar a opï¿½ï¿½o
+    	printf("Opção: "); //apenas visual no momento em que o usuário digitar a opçãoo
     	//fim do menu
 
-		scanf("%d", &opcao); //recebe e armazena a opï¿½ï¿½o do usuï¿½rio
+		scanf("%d", &opcao); //recebe e armazena a opção do usuário
 		
 		system("cls");//limpa a tela
 		
-		//versï¿½o criada com switch (melhor sistema de escolha para programas grandes pois utiliza menos memï¿½ria)
+		//versão criada com switch (melhor sistema de escolha para programas grandes pois utiliza menos memória)
 		switch(opcao){		
 			case 1:
-				printf("Vocï¿½ escolheu a opï¿½ï¿½o registrar nomes!\n\n");
+				printf("Você escolheu a opção registrar nomes!\n\n");
 				system("pause");
 				break;
 			
 			case 2:
-				printf("Vocï¿½ escolheu a opï¿½ï¿½o consultar nomes!\n\n");
+				printf("Vocïê escolheu a opção consultar nomes!\n\n");
 				system("pause");
 				break;
 				
 			case 3:
-				printf("Vocï¿½ escolheu a opï¿½ï¿½o deletar nomes!\n\n");
+				printf("Você escolheu a opção deletar nomes!\n\n");
 				system("pause");
 				break;
+				
+			case 4:
+                 teste();
+                 break;
 			
 			default:
-				printf("Essa opï¿½cï¿½o ï¿½ invï¿½lida!\n\n");
+				printf("Essa opção é inválida!\n\n");
 				system("pause");
 				break;
 		}
 				
 		/*	
-		//versï¿½o feita com if
-		//validando a opï¿½ï¿½o selecionada pelo usuï¿½rio
+		//versão feita com if
+		//validando a opção selecionada pelo usuário
 		if(opcao==1){
-			printf("Vocï¿½ escolheu a opï¿½ï¿½o registrar nomes!\n");
+			printf("Você escolheu a opção registrar nomes!\n");
 			system("pause");
 		}
 		if(opcao==2){
-			printf("Vocï¿½ escolheu a opï¿½ï¿½o consultar nomes!\n");
+			printf("Você escolheu a opção consultar nomes!\n");
 			system("pause");
 		}
 		if(opcao==3){
-			printf("Vocï¿½ escolheu a opï¿½ï¿½o deletar nomes!\n");
+			printf("Você escolheu a opção deletar nomes!\n");
 			system("pause");
 		}
 		if(opcao <= 0 || opcao >=4){
-			printf("Essa opï¿½ï¿½o ï¿½ invï¿½lida!\n");
+			printf("Essa opção é inválida!\n");
 			system("pause");
 		}
 		*/
