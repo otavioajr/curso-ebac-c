@@ -8,7 +8,13 @@ int registro(){
 }
 
 int consulta(){
-	printf("Você escolheu a opção ")
+	printf("Você escolheu a opção consultar nomes\n\n");
+	system("pause");
+}
+
+int deletar(){
+	printf("Você escolheu a opção deletar nomes!\n\n");
+	system("pause");
 }
 
 int main(){
@@ -38,23 +44,16 @@ int main(){
 		//versão criada com switch (melhor sistema de escolha para programas grandes pois utiliza menos memória)
 		switch(opcao){		
 			case 1:
-				printf("Você escolheu a opção registrar nomes!\n\n");
-				system("pause");
+				registro();
 				break;
 			
 			case 2:
-				printf("Vocïê escolheu a opção consultar nomes!\n\n");
-				system("pause");
+				consulta();
 				break;
 				
 			case 3:
-				printf("Você escolheu a opção deletar nomes!\n\n");
-				system("pause");
+				deletar();
 				break;
-				
-			case 4:
-                 teste();
-                 break;
 			
 			default:
 				printf("Essa opção é inválida!\n\n");
