@@ -1,10 +1,54 @@
 #include <stdio.h> //biblioteca de comunicação com o usuário
 #include <stdlib.h> //biblioteca de alocação de espaço em memória
 #include <locale.h> //biblioteca de alocações de texto por região
+#include <string.h> //biblioteca responsável por cuidar das strings
 
 int registro(){
-    printf("Você escolheu a opção de registrar nome!\n\n");
-    system("pause");
+    char arquivo [40];
+    char cpf [40];
+    char nome [40];
+    char sobrenome [40];
+    char cargo [40];
+    
+    printf("Digite o CPF: ");
+    scanf("%s", cpf);
+    
+    strcpy(arquivo, cpf);
+    
+    FILE *file;
+    
+    file = fopen(arquivo, "w");
+    fprintf(file, cpf);
+    fclose(file);
+    
+    file = fopen(arquivo, "a");
+    fprintf(file, ",");
+    fclose(file);
+    
+    printf("Digite o nome:");
+    scanf("%s", nome);
+    
+    file = fopen(arquivo, "a");
+    fprintf(file, nome);
+    fclose(file);
+    
+    file = fopen(arquivo, "a");
+    fprintf(file, ",");
+    fclose(file);
+    
+    printf("Digite o sobrenome: ");
+    scanf("%s", sobrenome);
+    
+    file = fopen(arquivo, "a");
+    fprintf(file, sobrenome);
+    fclose(file);
+    
+    file = fopen(arquivo, "a");
+    fprintf(file, ",");
+    fclose(file);
+    
+    printf("Digite o cargo: ");
+    
 }
 
 int consulta(){
