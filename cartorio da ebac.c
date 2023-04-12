@@ -3,7 +3,7 @@
 #include <locale.h> //biblioteca de alocações de texto por região
 #include <string.h> //biblioteca responsável por cuidar das strings
 
-int registro(){
+int registro (){
     char arquivo [40];
     char cpf [40];
     char nome [40];
