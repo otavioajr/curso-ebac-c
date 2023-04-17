@@ -1,7 +1,7 @@
-#include <stdio.h> //biblioteca de comunicação com o usuário
-#include <stdlib.h> //biblioteca de alocação de espaço em memória
-#include <locale.h> //biblioteca de alocações de texto por região
-#include <string.h> //biblioteca responsável por cuidar das strings
+#include <stdio.h> //biblioteca de comunicaï¿½ï¿½o com o usuï¿½rio
+#include <stdlib.h> //biblioteca de alocaï¿½ï¿½o de espaï¿½o em memï¿½ria
+#include <locale.h> //biblioteca de alocaï¿½ï¿½es de texto por regiï¿½o
+#include <string.h> //biblioteca responsï¿½vel por cuidar das strings
 
 int registro (){
     char arquivo [40];
@@ -10,7 +10,7 @@ int registro (){
     char sobrenome [40];
     char cargo [40];
     
-    printf("Digite o CPF: ");
+    printf("Digite o seu CPF: ");
     scanf("%s", cpf);
     
     strcpy(arquivo, cpf);
@@ -25,7 +25,7 @@ int registro (){
     fprintf(file, ",");
     fclose(file);
     
-    printf("Digite o nome:");
+    printf("Digite o seu nome: ");
     scanf("%s", nome);
     
     file = fopen(arquivo, "a");
@@ -36,7 +36,7 @@ int registro (){
     fprintf(file, ",");
     fclose(file);
     
-    printf("Digite o sobrenome: ");
+    printf("Digite o seu sobrenome: ");
     scanf("%s", sobrenome);
     
     file = fopen(arquivo, "a");
@@ -47,45 +47,66 @@ int registro (){
     fprintf(file, ",");
     fclose(file);
     
-    printf("Digite o cargo: ");
+    printf("Digite o seu cargo: ");
+    scanf("%s", cargo);
     
+    file = fopen(arquivo, "a");
+    fprintf(file, cargo);
+    fclose(file);
 }
 
 int consulta(){
-	printf("Você escolheu a opção consultar nomes\n\n");
+	char cpf [40];
+	char conteudo [200];
+	
+	printf("Digite o CPF a ser consultado: ");
+	scanf("%s", cpf);
+	
+	FILE *file;
+	
+	file = fopen(cpf, "r");
+	
+	if(file == NULL){
+		printf("CPF nÃ£o localizado! (NÃ£o Ã© possÃ­vel abrir o arquivo!)\n");
+	}
+	
+	while(fgets(conteudo, 200, file) != NULL){
+		printf("\nEssas sÃ£o as informaÃ§Ãµes do usuÃ¡rio: ");
+		printf("%s", conteudo);
+		printf("\n\n");
+	}
+	
 	system("pause");
 }
-
 int deletar(){
-	printf("Você escolheu a opção deletar nomes!\n\n");
+	printf("VocÃª escolheu a opÃ§Ã£o deletar nomes!\n\n");
 	system("pause");
 }
-
 int main(){
 	
-	//Define a variável
+	//Define a variï¿½vel
 	int opcao = 0;
 	int laco = 1;
 	
 	for(laco = 1; laco = 1;){
 			system("cls");//limpa a tela
-		//Define a localidade do programa (para padrões de teclado ex: aceitar acentos
+		//Define a localidade do programa (para padrï¿½es de teclado ex: aceitar acentos
     	setlocale(LC_ALL, "Portuguese");
     
     	//criando o menu do programa
-    	printf("### Cartório da EBAC ### \n\n");
-    	printf("Escolha a opção desejada do menu: \n \n");
+    	printf("### CartÃ³rio da EBAC ### \n\n");
+    	printf("Escolha a opÃ§Ã£o desejada do menu: \n \n");
     	printf("\t1 - Registrar nomes\n");
     	printf("\t2 - Consultar nomes\n");
     	printf("\t3 - Deletar nomes\n\n");
-    	printf("Opção: "); //apenas visual no momento em que o usuário digitar a opçãoo
+    	printf("OpÃ§Ã£o: "); //apenas visual no momento em que o usuï¿½rio digitar a opï¿½ï¿½oo
     	//fim do menu
 
-		scanf("%d", &opcao); //recebe e armazena a opção do usuário
+		scanf("%d", &opcao); //recebe e armazena a opï¿½ï¿½o do usuï¿½rio
 		
 		system("cls");//limpa a tela
 		
-		//versão criada com switch (melhor sistema de escolha para programas grandes pois utiliza menos memória)
+		//versï¿½o criada com switch (melhor sistema de escolha para programas grandes pois utiliza menos memï¿½ria)
 		switch(opcao){		
 			case 1:
 				registro();
@@ -100,28 +121,28 @@ int main(){
 				break;
 			
 			default:
-				printf("Essa opção é inválida!\n\n");
+				printf("Essa opÃ§Ã£o Ã© invÃ¡lida!\n\n");
 				system("pause");
 				break;
 		}
 				
 		/*	
-		//versão feita com if
-		//validando a opção selecionada pelo usuário
+		//versï¿½o feita com if
+		//validando a opï¿½ï¿½o selecionada pelo usuï¿½rio
 		if(opcao==1){
-			printf("Você escolheu a opção registrar nomes!\n");
+			printf("Vocï¿½ escolheu a opï¿½ï¿½o registrar nomes!\n");
 			system("pause");
 		}
 		if(opcao==2){
-			printf("Você escolheu a opção consultar nomes!\n");
+			printf("Vocï¿½ escolheu a opï¿½ï¿½o consultar nomes!\n");
 			system("pause");
 		}
 		if(opcao==3){
-			printf("Você escolheu a opção deletar nomes!\n");
+			printf("Vocï¿½ escolheu a opï¿½ï¿½o deletar nomes!\n");
 			system("pause");
 		}
 		if(opcao <= 0 || opcao >=4){
-			printf("Essa opção é inválida!\n");
+			printf("Essa opï¿½ï¿½o ï¿½ invï¿½lida!\n");
 			system("pause");
 		}
 		*/
