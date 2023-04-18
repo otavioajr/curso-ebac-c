@@ -1,16 +1,11 @@
-<<<<<<< Updated upstream
-#include <stdio.h> //biblioteca de comunica��o com o usu�rio
-#include <stdlib.h> //biblioteca de aloca��o de espa�o em mem�ria
-#include <locale.h> //biblioteca de aloca��es de texto por regi�o
-#include <string.h> //biblioteca respons�vel por cuidar das strings
-=======
 #include <stdio.h> //biblioteca de comunicação com o usuário
 #include <stdlib.h> //biblioteca de alocação de espaço em memória
 #include <locale.h> //biblioteca de alocações de texto por região
 #include <string.h> //biblioteca responsável por cuidar das strings
->>>>>>> Stashed changes
 
 int registro (){
+	setlocale(LC_ALL, "Portuguese");
+	
     char arquivo [40];
     char cpf [40];
     char nome [40];
@@ -63,7 +58,9 @@ int registro (){
 }
 
 int consulta(){
-<<<<<<< Updated upstream
+
+setlocale(LC_ALL, "Portuguese");
+
 	char cpf [40];
 	char conteudo [200];
 	
@@ -84,9 +81,6 @@ int consulta(){
 		printf("\n\n");
 	}
 	
-=======
-	printf("Você escolheu a opção consultar nomes\n\n");
->>>>>>> Stashed changes
 	system("pause");
 }
 int deletar(){
@@ -95,21 +89,13 @@ int deletar(){
 }
 int main(){
 	
-<<<<<<< Updated upstream
-	//Define a vari�vel
-=======
 	//Define a variável
->>>>>>> Stashed changes
 	int opcao = 0;
 	int laco = 1;
 	
 	for(laco = 1; laco = 1;){
 			system("cls");//limpa a tela
-<<<<<<< Updated upstream
-		//Define a localidade do programa (para padr�es de teclado ex: aceitar acentos
-=======
 		//Define a localidade do programa (para padrões de teclado ex: aceitar acentos
->>>>>>> Stashed changes
     	setlocale(LC_ALL, "Portuguese");
     
     	//criando o menu do programa
@@ -118,16 +104,6 @@ int main(){
     	printf("\t1 - Registrar nomes\n");
     	printf("\t2 - Consultar nomes\n");
     	printf("\t3 - Deletar nomes\n\n");
-<<<<<<< Updated upstream
-    	printf("Opção: "); //apenas visual no momento em que o usu�rio digitar a op��oo
-    	//fim do menu
-
-		scanf("%d", &opcao); //recebe e armazena a op��o do usu�rio
-		
-		system("cls");//limpa a tela
-		
-		//vers�o criada com switch (melhor sistema de escolha para programas grandes pois utiliza menos mem�ria)
-=======
     	printf("Opção: "); //apenas visual no momento em que o usuário digitar a opção
     	//fim do menu
 
@@ -136,7 +112,6 @@ int main(){
 		system("cls");//limpa a tela
 		
 		//versão criada com switch (melhor sistema de escolha para programas grandes pois utiliza menos memória)
->>>>>>> Stashed changes
 		switch(opcao){		
 			case 1:
 				registro();
@@ -157,24 +132,6 @@ int main(){
 		}
 				
 		/*	
-<<<<<<< Updated upstream
-		//vers�o feita com if
-		//validando a op��o selecionada pelo usu�rio
-		if(opcao==1){
-			printf("Voc� escolheu a op��o registrar nomes!\n");
-			system("pause");
-		}
-		if(opcao==2){
-			printf("Voc� escolheu a op��o consultar nomes!\n");
-			system("pause");
-		}
-		if(opcao==3){
-			printf("Voc� escolheu a op��o deletar nomes!\n");
-			system("pause");
-		}
-		if(opcao <= 0 || opcao >=4){
-			printf("Essa op��o � inv�lida!\n");
-=======
 		//versão feita com if
 		//validando a opção selecionada pelo usuário
 		if(opcao==1){
@@ -191,7 +148,6 @@ int main(){
 		}
 		if(opcao <= 0 || opcao >=4){
 			printf("Essa opçãoo é inválida!\n");
->>>>>>> Stashed changes
 			system("pause");
 		}
 		*/
